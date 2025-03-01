@@ -1,0 +1,40 @@
+CREATE DATABASE company_DB;
+
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    age INT,
+    salary DECIMAL(10, 2)
+);
+
+
+
+INSERT INTO employees (name, email, age, salary) VALUES ('koushik', 'koushik998@gmail.com', 30, 50000);
+
+
+SELECT * FROM employees WHERE salary > 40000;
+
+
+
+UPDATE employees SET salary = 55000 WHERE name = 'koushik';
+
+
+DELETE FROM employees WHERE email = 'koushik998@gmail.com';
+
+
+SELECT employees.name, employees.salary, departments.name AS department_name
+FROM employees
+INNER JOIN departments ON employees.department_id = departments.id;
+
+
+
+
+SELECT * FROM employees ORDER BY salary DESC LIMIT 3;
+
+
+
+
+
+
